@@ -1,0 +1,28 @@
+Easybank project take 3:
+
+What I learned:
+
+1) Embedding SVG images to the html doc:
+There are 4 ways:
+- Inline: Directly adding the svg code to the html doc
+- <object type="image/svg+xml" data="svgURL" width="svgWidth" height="svgheight" title="descriptive name"></object>: This method allows you to manipulate the svg element's properties. This method is prefered because object is an html standard tag, hence it is supported by all browsers.
+- <embed></embed>: Similar to object, but it is not widely supported
+- <svg><use></use></svg>: This works if a single path or g tag  is used to create the svg element. If the svg has multiple paths, it can still work, but it is tedious.
+
+In this project, I used the object tag.
+
+However, the cursor:pointer property does not work on the object tag. That's why for icons that do need to be modified like the logo, I simply used the image tag
+
+
+2) Loading images
+- To improve the performance, set the loading attribute to lazy
+- Add a much smaller image of the original image as a background (this is to prevent the loading from top to bottom we sometimes see when the connection is slow)
+- Use the following css properties
+background-size: cover
+background-position: center
+
+- As for the actual image
+object-fit:cover;
+object-position: center;
+
+By matching the background and the image, they will perfectly overlap making for a smooth load.

@@ -1,0 +1,17 @@
+{
+  "name": "easybank-landing-page-master",
+  "version": "1.0.0",
+  "description": "Easybank landing page coding challenge",
+  "source": "index.html",
+  "scripts": {
+    "start":"parcel",
+    "build": "parcel build index.html --dist-dir ./easybank"
+  },
+  "keywords": [],
+  "author": "Julie-Gz",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
+    "parcel": "^2.11.0"
+  }
+}
