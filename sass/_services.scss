@@ -1,0 +1,41 @@
+#services{
+    background-color: $lightGrayishBlue;
+
+    .services__content{
+        margin-bottom: 3rem;
+
+        .services__text{
+            max-width: 60ch;
+        }
+    }
+
+    .services__cards{
+        .services__card > *{
+            margin-bottom: 1.5rem;
+        }
+
+        .services__card{
+            .services__card__description{
+                max-width: 28ch;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 529px) {
+    #services{
+        text-align: center;
+        .services__content{
+            margin-bottom: 1rem;
+        }
+
+        .services__card{
+            .services__card__icon object{
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

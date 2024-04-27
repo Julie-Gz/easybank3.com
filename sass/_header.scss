@@ -1,0 +1,104 @@
+// Desktop
+header{
+    background-color: $white;
+    position: relative;
+    z-index: 2;
+
+    .hamburger{
+        display: none;
+    }
+
+    .header__menu{
+        gap: 2rem;
+    }
+
+    .header__menu__item{
+        position: relative;
+        pointer-events: all;
+    
+        &:hover{
+            .header__menu__link{
+                color: $darkBlue;
+    
+                &::before{
+                    height: 4px;
+                }
+            }
+        }
+    }
+    
+    .header__menu__link{
+        color: $grayishBlue;
+        transition: color 0.3s ease-in-out;
+    
+        &::before{
+            position: absolute;
+            content:"";
+            height: 0;
+            width: 100%;
+            bottom: -1.35rem;
+            border-radius: 5px;
+            left: 0;
+            background-color: $limeGreen;
+            transition: height 0.3s ease-in-out;
+        }
+    }
+    
+    .overlay{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom, $darkBlue,transparent);
+    }
+}
+
+
+@media screen and (max-width: 920px) {
+    header{
+        .hamburger{
+            display: block;
+        }
+
+        .request__btn{
+            display: none;
+        }
+
+        .flex.header__menu{
+            flex-direction: column;
+            position: absolute;
+            top: 15vh;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $white;
+            width: 60vw;
+            border-radius: 0.5rem;
+            padding: 2rem 0;
+            z-index: 1;
+
+
+            .header__menu__item{
+                .header__menu__link{
+                    color: $darkBlue;
+                    &:hover{
+                        color: $limeGreen;
+                    }
+    
+                    &::before{
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header{
+        .flex.header__menu{
+            width: 90vw;
+        }
+    }
+}
+

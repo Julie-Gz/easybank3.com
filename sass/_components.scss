@@ -1,0 +1,24 @@
+// Buttons
+.request__btn{
+    display: inline-block;
+    background-image: $btnLinearGradient;
+    padding: 0.5rem 1rem;
+    border-radius: 200px;
+    color: $white;
+    font-size:  0.8rem;
+    transition: background-image 0.3s ease-in-out;
+
+    &:hover{
+        background-image: $btnHoverGradient;
+    }   
+}
+
+.hamburger{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+a object.logo{
+    cursor: pointer;
+}

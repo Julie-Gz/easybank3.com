@@ -1,0 +1,17 @@
+// Change the opacity of a color
+@function adjust-opacity($color,$opacity){
+    @return rgba($color,$opacity);
+}
+
+$darkBlue: #2d314d;
+$limeGreen: #31d35c;
+$brightCyan: #2bb7da;
+$grayishBlue: #9698a6;
+$lightGrayishBlue: #f3f4f6;
+$veryLightGray: #fafafa;
+$white: #fff;
+
+// Gradients
+$btnLinearGradient: linear-gradient(to right, $limeGreen, $brightCyan);
+$btnHoverGradient:  linear-gradient(to right, lighten($limeGreen, 10%), lighten($brightCyan, 10%));
+$overlayLinearGradient: linear-gradient(to bottom, adjust-opacity($darkBlue,0.5), adjust-opacity($white,0.5));

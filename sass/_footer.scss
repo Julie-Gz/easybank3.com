@@ -1,0 +1,116 @@
+#footer{
+    background-color: $darkBlue;
+
+   .footer__contacts, .footer__copyright{
+    flex: 1;
+   }
+
+   .footer__contacts{
+    .footer__contacts__container{
+        margin-right: 5em;
+
+        .footer__logo{
+            svg{
+                margin-bottom: 2.5em;
+
+                path[fill="#2D314D"]{
+                    fill: $white;
+                }
+            }
+            
+        }
+
+        .social__links__container{
+
+            .social__link{
+                svg path{
+                    transition: fill  .15s ease-in-out;
+                }
+                &:hover{
+                    svg path{
+                        fill:$limeGreen;
+                    }
+                }
+                
+            }
+        }
+    }
+    .footer__nav{
+        .footer__menu{
+            &:first-child{
+                margin-right: 5em;
+            }
+            .footer__menu__item{
+                &:not(:last-child){
+                    margin-bottom: 0.6em;
+                }
+
+                .footer__menu__link{
+                    color: $white;
+                    transition: color 0.15s ease-in-out;
+                    &:hover{
+                        color: $limeGreen;
+                    }
+                }
+            }
+        }
+    }
+   }
+
+   .footer__copyright{
+    text-align: right;
+    .request__btn{
+        margin-bottom: 1.5em;
+    }
+   }
+    
+}
+
+@media screen and (max-width: 769px) {
+    #footer{
+        .footer__contacts{
+            .footer__contacts__container{
+                margin-right: 3em;
+            }
+            .footer__nav{
+                .footer__menu{
+                    &:first-child{
+                        margin-right:3em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media  screen and (max-width: 529px) {
+    #footer.flex{
+        flex-direction: column;
+        .footer__contacts{
+            flex-direction: column;
+            margin-bottom: 1.5em;
+            .footer__contacts__container{
+                margin-bottom: 1.5em;
+
+                .footer__logo svg{
+                    margin-bottom: 1.5em;
+                }
+            }
+        }
+        .footer__nav{
+            flex-direction: column;
+            .footer__menu{
+                text-align: center;
+                &:first-child{
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .footer__copyright{
+            text-align: center;
+        }
+        
+    }
+    
+}

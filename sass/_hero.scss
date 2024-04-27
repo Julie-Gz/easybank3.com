@@ -1,0 +1,108 @@
+#hero{
+    background-color: $veryLightGray;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    .hero__content,.hero__image{
+        padding: 10vw 7vw;
+
+        @media screen and (max-width: 480px) {
+            padding: 7vw;
+        }
+    }
+
+    .hero__content{
+        flex: 3;
+        align-self: center;
+
+        #hero__title{
+            font-weight: 300;
+        }
+
+        .hero__text{
+            max-width: 45ch;
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    .hero__image{
+        flex: 4;
+        position: relative;
+        background-image: url("../images/bg-intro-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: 137%;
+        background-position: right -16rem top -11.5rem;
+
+        &::before{
+            position: absolute;
+            content: "";
+            height: 145%;
+            aspect-ratio: 1 / 1;
+            right: -12vw;
+            top: -7rem;
+            background-image: url("../images/image-mockups.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+    }
+}
+
+//Large screens media query
+@media screen and (max-width: 1149px) {
+    #hero{
+        .hero__image{
+            background-size: 147%;
+            background-position: right -16rem top -11.5rem;
+
+            &::before{
+                height: 130%;
+            }
+        }
+    }
+}
+
+
+// Media query
+@media screen and (max-width: 920px) {
+    #hero{
+        flex-direction: column;
+        text-align: center;
+
+        .hero__content{
+            flex: 1;
+
+            .hero__text{
+                max-width: 100%;
+            }
+        }
+
+        .hero__image{
+            flex: 1;
+            flex-basis: 60vw;
+            background-image: url("../images/bg-intro-mobile.svg");
+            background-position: center top;
+            background-size: 130% auto;
+            &::before{
+                height: 130%;
+                top: -10em;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #hero{
+        .hero__image{
+            background-size: 100%;
+            background-position: center;
+            &::before{
+                height: 138%;
+                width: 100%;
+                top: -5em;
+            }
+        }
+    }
+}
